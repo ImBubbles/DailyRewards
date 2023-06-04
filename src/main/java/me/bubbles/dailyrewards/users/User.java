@@ -40,6 +40,17 @@ public class User {
         return playerData.getCoolDown() <= plugin.getEpochTimestamp();
     }
 
+    public boolean hasStuffToRedeem() {
+        UtilRewardsData utilRewardsData = new UtilRewardsData(plugin);
+        boolean result = false;
+        for(String reward : utilRewardsData.getRewardsList()) {
+            if(player.hasPermission(plugin.getName().toLowerCase()+"."+reward)) {
+                result=true;
+            }
+        }
+        return result;
+    }
+
     public void restartCoolDown() {
         new UtilPlayerData(plugin,player).restartCoolDown();
     }

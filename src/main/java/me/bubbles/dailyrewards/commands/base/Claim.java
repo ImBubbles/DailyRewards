@@ -18,13 +18,17 @@ public class Claim extends Argument {
             utilSender.sendMessage("%prefix% %primary%You must be in game to do this!");
             return;
         }
-        if(utilSender.getUser().canRedeem()) {
-            utilSender.getUser().redeemRewards();
-            utilSender.sendMessage("%prefix% %primary%You have claimed your daily rewards!");
-            utilSender.getUser().restartCoolDown();
+        if(!utilSender.getUser().hasStuffToRedeem()) {
+            utilSender.sendMessage("%prefix% %primary%You don't have anything to claim!");
             return;
         }
-        utilSender.sendMessage("%prefix% %primary%You can claim your daily rewards in %secondary%"+utilSender.getUser().getFormattedTimeLeft()+"%primary%.");
+        if(!utilSender.getUser().canRedeem()) {
+            utilSender.sendMessage("%prefix% %primary%You can claim your daily rewards in %secondary%"+utilSender.getUser().getFormattedTimeLeft()+"%primary%.");
+            return;
+        }
+        utilSender.getUser().redeemRewards();
+        utilSender.sendMessage("%prefix% %primary%You have claimed your daily rewards!");
+        utilSender.getUser().restartCoolDown();
     }
 
 }

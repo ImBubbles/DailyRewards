@@ -1,4 +1,4 @@
 ########
 # DATA #
 ########
-# DATA WILL NOT BE PUT HERE IF MYSQL IS SET TO TRUE IN config.yml
+# DATA WILL NOT BE PUT HERE IF MARIADB IS SET TO TRUE IN config.yml
