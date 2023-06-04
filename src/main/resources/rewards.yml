@@ -1,0 +1,3 @@
+default: # USE PERMISSIONS NODE dailyrewards.default
+  - 'give %name% diamond 2'
+  - 'broadcast &6%name% &rclaimed their daily rewards with &6/daily&r!'

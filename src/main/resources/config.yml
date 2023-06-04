@@ -1,0 +1,16 @@
+#########
+# MYSQL #
+#########
+# RESTART FOR MARIADB
+MariaDB: false
+database: 'database'
+endpoint: 'endpoint'
+username: 'username'
+password: 'password'
+
+############
+# SETTINGS #
+############
+prefix: '&a[&e&lDailyRewards&a]'
+primaryColor: '&a'
+secondaryColor: '&e'

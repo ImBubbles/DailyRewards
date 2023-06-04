@@ -1,0 +1,13 @@
+name: DailyRewards
+version: '${project.version}'
+main: me.bubbles.dailyrewards.DailyRewards
+api-version: 1.19
+authors: [Bubbles]
+commands:
+  dailyrewards:
+    usage: /<command>
+    description: Base command
+  daily:
+    usage: /<command>
+    description: Claim daily rewards
+    aliases: [dailyclaim]
