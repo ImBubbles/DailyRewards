@@ -1,6 +1,6 @@
-#########
-# MYSQL #
-#########
+###########
+# MARIADB #
+###########
 # RESTART FOR MARIADB
 MariaDB: false
 database: 'database'

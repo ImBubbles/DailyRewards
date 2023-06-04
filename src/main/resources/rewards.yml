@@ -1,3 +1,8 @@
+# IF SOMEONE HAS PERMISSION NDOE dailyrewards.default AND dailyrewards.example THE USER WILL RECEIVE BOTH REWARDS
+# USE %name% FOR A PLAYER'S NAME
+
 default: # USE PERMISSIONS NODE dailyrewards.default
   - 'give %name% diamond 2'
   - 'broadcast &6%name% &rclaimed their daily rewards with &6/daily&r!'
+example: # USE PERMISSION NODE dailyrewards.example
+  - 'give %name% gold_ingot 2'
