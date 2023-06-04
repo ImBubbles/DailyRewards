@@ -42,13 +42,12 @@ public class User {
 
     public boolean hasStuffToRedeem() {
         UtilRewardsData utilRewardsData = new UtilRewardsData(plugin);
-        boolean result = false;
         for(String reward : utilRewardsData.getRewardsList()) {
             if(player.hasPermission(plugin.getName().toLowerCase()+"."+reward)) {
-                result=true;
+                return true;
             }
         }
-        return result;
+        return false;
     }
 
     public void restartCoolDown() {
