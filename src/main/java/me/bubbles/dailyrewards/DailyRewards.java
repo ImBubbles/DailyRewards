@@ -1,11 +1,9 @@
 package me.bubbles.dailyrewards;
 
 import me.bubbles.dailyrewards.commands.manager.CommandManager;
-import me.bubbles.dailyrewards.users.UserManager;
 import me.bubbles.dailyrewards.util.MariaDB;
 import me.bubbles.dailyrewards.config.ConfigManager;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.time.Instant;
 
@@ -13,7 +11,6 @@ public final class DailyRewards extends JavaPlugin {
 
     private CommandManager commandManager;
     private ConfigManager configManager;
-    private UserManager userManager;
     private MariaDB mariaDB;
     private boolean useMariaDB;
 
@@ -60,15 +57,6 @@ public final class DailyRewards extends JavaPlugin {
         }else{
             getLogger().warning("MariaDB is either not valid or set to false, using data.yml");
         }
-        // START USER MANAGER
-        userManager=new UserManager(this);
-
-        //// USERS (in case of plugin is loaded after startup)
-        if(!(getServer().getOnlinePlayers().size()==0)) {
-            for(Player player : getServer().getOnlinePlayers()) {
-                userManager.getUser(player);
-            }
-        }
 
     }
 
@@ -91,10 +79,6 @@ public final class DailyRewards extends JavaPlugin {
     public void reload() {
         configManager.reloadAll();
         reloadConfig();
-    }
-
-    public UserManager getUserManager() {
-        return userManager;
     }
 
     public ConfigManager getConfigManager() {

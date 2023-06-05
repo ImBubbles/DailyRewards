@@ -59,7 +59,7 @@ public final class MariaDB {
             }
             statement.close();
         } catch (SQLException e) {
-            return null;
+            e.printStackTrace();
         }
 
         return null;

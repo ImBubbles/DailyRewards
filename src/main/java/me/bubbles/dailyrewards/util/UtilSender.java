@@ -1,7 +1,7 @@
 package me.bubbles.dailyrewards.util;
 
 import me.bubbles.dailyrewards.DailyRewards;
-import me.bubbles.dailyrewards.users.User;
+import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
@@ -45,8 +45,8 @@ public class UtilSender {
         return (Player) sender;
     }
 
-    public User getUser() {
-        return plugin.getUserManager().getUser(getPlayer());
+    public UtilUser getUser() {
+        return new UtilUser(getPlayer(),plugin);
     }
 
 }

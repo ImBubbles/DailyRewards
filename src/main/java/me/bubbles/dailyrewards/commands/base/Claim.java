@@ -2,6 +2,7 @@ package me.bubbles.dailyrewards.commands.base;
 
 import me.bubbles.dailyrewards.DailyRewards;
 import me.bubbles.dailyrewards.commands.manager.Argument;
+import me.bubbles.dailyrewards.util.UtilUser;
 import org.bukkit.command.CommandSender;
 
 public class Claim extends Argument {
@@ -18,17 +19,18 @@ public class Claim extends Argument {
             utilSender.sendMessage("%prefix% %primary%You must be in game to do this!");
             return;
         }
-        if(!utilSender.getUser().hasStuffToRedeem()) {
+        UtilUser utilUser = utilSender.getUser();
+        if(!utilUser.hasStuffToRedeem()) {
             utilSender.sendMessage("%prefix% %primary%You don't have anything to claim!");
             return;
         }
-        if(!utilSender.getUser().canRedeem()) {
-            utilSender.sendMessage("%prefix% %primary%You can claim your daily rewards in %secondary%"+utilSender.getUser().getFormattedTimeLeft()+"%primary%.");
+        if(!utilUser.canRedeem()) {
+            utilSender.sendMessage("%prefix% %primary%You can claim your daily rewards in %secondary%"+ utilUser.getFormattedTimeLeft()+"%primary%.");
             return;
         }
-        utilSender.getUser().redeemRewards();
+        utilUser.redeemRewards();
         utilSender.sendMessage("%prefix% %primary%You have claimed your daily rewards!");
-        utilSender.getUser().restartCoolDown();
+        utilUser.restartCoolDown();
     }
 
 }

@@ -1,17 +1,15 @@
-package me.bubbles.dailyrewards.users;
+package me.bubbles.dailyrewards.util;
 
 import me.bubbles.dailyrewards.DailyRewards;
-import me.bubbles.dailyrewards.util.UtilPlayerData;
-import me.bubbles.dailyrewards.util.UtilRewardsData;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-public class User {
+public class UtilUser {
 
     private Player player;
     private DailyRewards plugin;
 
-    public User(Player player, DailyRewards plugin) {
+    public UtilUser(Player player, DailyRewards plugin) {
         this.player=player;
         this.plugin=plugin;
     }
